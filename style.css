@@ -77,6 +77,7 @@ nav .link-group a:hover {
     padding: 20px;
     border-radius: 10px;
     background-color: var(--card-bg);
+    transition: height 1s;
 }
 
 
@@ -108,10 +109,7 @@ nav .link-group a:hover {
     border: none;
 }
 
-
 .weather {
-    margin-top: 20px;
-    padding: 20px;
     display: flex;
     color: var(--primary-text-color);
     flex-direction: column;
@@ -123,6 +121,7 @@ nav .link-group a:hover {
 
 .weather img {
     width: 300px;
+    user-select: none;
 }
 
 .weather h1 {
