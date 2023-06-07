@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 // Change Theme
 const changeTheme = document.getElementById('change_theme');
 

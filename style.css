@@ -58,10 +58,77 @@ nav .link-group {
 nav .link-group a {
     text-decoration: none;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--primary-text-color);
 }
 
 nav .link-group a:hover {
     color: var(--secondary-text-color);
+    transition: color .3s;
+}
+
+.container {
+    width: 100%;
+}
+
+.card {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+}
+
+
+.search i {
+    font-size: 3rem;
+    color: var(--primary-text-color);
+}
+
+.search:hover i,
+.search:has(>input:focus) i {
+    color: var(--primary-color);
+    transition: color .3s;
+}
+
+.search input {
+    position: relative;
+    width: 500px;
+    padding-left: 5px;
+    font-size: 2.75rem;
+    color: var(--primary-text-color);
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.search input:hover,
+.search input:focus {
+    outline: none;
+    border: none;
+}
+
+
+.weather {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    color: var(--primary-text-color);
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.weather img {
+    width: 300px;
+}
+
+.weather h1 {
+    font-size: 4rem;
+}
+
+.weather p {
+    font-size: 2rem;
 }
