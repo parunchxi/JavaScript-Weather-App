@@ -67,17 +67,19 @@ nav .link-group a:hover {
     transition: color .3s;
 }
 
+/* Main */
 .container {
     width: 100%;
 }
 
 .card {
     width: 600px;
+    height: 100px;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
     background-color: var(--card-bg);
-    transition: height 1s;
+    transition: 0.6s ease-in-out;
 }
 
 
@@ -93,6 +95,7 @@ nav .link-group a:hover {
 }
 
 .search input {
+    text-transform: uppercase;
     position: relative;
     width: 500px;
     padding-left: 5px;
@@ -110,13 +113,15 @@ nav .link-group a:hover {
 }
 
 .weather {
+    height: 600px;
+    margin-top: 50px;
     display: flex;
     color: var(--primary-text-color);
     flex-direction: column;
     justify-items: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    transition: height 0.6s ease-in-out;
 }
 
 .weather img {
@@ -124,10 +129,51 @@ nav .link-group a:hover {
     user-select: none;
 }
 
-.weather h1 {
+.text h1 {
+    margin-top: 20px;
     font-size: 4rem;
 }
 
-.weather p {
+.text p {
     font-size: 2rem;
+}
+
+.wrapper {
+    margin-top: 30px;
+    padding: 20px 0;
+    height: 140px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 1fr;
+    align-content: center;
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    opacity: 0;
+    transition: opacity .6s ease-in-out .7s;
+}
+
+.detail i {
+    font-size: 3.5rem;
+    display: inline-block;
+    grid-column: 2 / 3;
+}
+
+.detail div {
+    display: inline-block;
+    grid-column: 3 / 4;
+}
+
+.detail div h1 {
+    margin-top: 5px;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.detail div p {
+    text-align: center;
 }
