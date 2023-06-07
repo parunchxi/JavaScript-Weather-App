@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --primary-color: #FF8A65;
+    --secondary-color: #FF7043;
+    --bg: #F5F7F8;
+    --card-bg: #ECEFF1;
+    --input-bg: #DBE2E5;
+    --primary-text-color: #263238;
+    --secondary-text-color: #607D8B;
+    --button-text-color: #F5F7F8;
+    --hover: #DBE2E5;
+}
+
+.dark-mode {
+    --primary-color: #FF7043;
+    --secondary-color: #FF8A65;
+    --bg: #13191C;
+    --card-bg: #263238;
+    --input-bg: #1C252A;
+    --primary-text-color: #ECEFF1;
+    --secondary-text-color: #90A4AE;
+    --button-text-color: #F5F7F8;
+    --hover: #3E515A;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+/* Navbar */
+nav {
+    height: 75px;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: 2rem;
+    color: var(--primary-text-color);
+    align-self: center;
+}
+
+nav .link-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav .link-group a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--primary-text-color);
+}
+
+nav .link-group a:hover {
+    color: var(--secondary-text-color);
+}
