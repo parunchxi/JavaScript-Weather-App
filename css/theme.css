@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --primary-color: #FF8A65;
+    --secondary-color: #FF7043;
+    --bg: #F5F7F8;
+    --card-bg: #DBE2E5;
+    --detail-bg: #CDD6DB;
+    --primary-text-color: #263238;
+    --secondary-text-color: #607D8B;
+    --button-text-color: #F5F7F8;
+}
+
+.dark-mode {
+    --primary-color: #FF7043;
+    --secondary-color: #FF8A65;
+    --bg: #13191C;
+    --card-bg: #263238;
+    --detail-bg: #29353B;
+    --primary-text-color: #ECEFF1;
+    --secondary-text-color: #90A4AE;
+    --button-text-color: #F5F7F8;
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: var(--bg);
+}
+
+body {
+    background-color: var(--bg);
+}
