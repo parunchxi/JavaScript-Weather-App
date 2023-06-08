@@ -50,6 +50,12 @@ searchCity.addEventListener('change', (() => {
     saveCity();
 }));
 
+searchCity.addEventListener('input', (() => {
+    if (searchCity.value === '') {
+        hide();
+    }
+}));
+
 // Show weather
 const weatherIcon = document.getElementById('weather_icon');
 const weatherTemperature = document.getElementById('temperature');
