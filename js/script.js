@@ -14,12 +14,14 @@ async function fetchData(city) {
         await showWeather(weatherData);
     } catch (error) {
         console.log(error);
+        errorShow();
     }
 }
 
 // City search and data
 const card = document.querySelector('.card');
 const fade = document.querySelectorAll('.fade');
+const wrapper = document.querySelector('.wrapper');
 const searchCity = document.getElementById('city');
 const weatherBox = document.getElementById('weather_box');
 const city = localStorage.getItem('city');
@@ -69,6 +71,7 @@ function showWeather(weatherData) {
 function show() {
     card.style.height = '730px';
     weatherBox.style.visibility = 'visible';
+    wrapper.style.opacity = 1;
     fade.forEach(item => {
         item.classList.add('show');
     })
@@ -77,7 +80,17 @@ function show() {
 function hide() {
     card.style.height = '100px';
     weatherBox.style.visibility = 'hidden';
+    wrapper.style.opacity = 0;
     fade.forEach(item => {
         item.classList.remove('show');
     })
+}
+
+function errorShow() {
+    card.style.height = '470px';
+    weatherBox.style.visibility = 'visible';
+    weatherIcon.src = `img/location.png`;
+    wrapper.style.opacity = 0;
+    weatherTemperature.innerHTML = ``;
+    weatherDescription.innerHTML = ``;
 }
