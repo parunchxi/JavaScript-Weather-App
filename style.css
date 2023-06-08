@@ -79,7 +79,7 @@ nav .link-group a:hover {
     padding: 20px;
     border-radius: 10px;
     background-color: var(--card-bg);
-    transition: 0.6s ease-in-out;
+    transition: height 0.6s ease-in-out;
 }
 
 
@@ -106,6 +106,10 @@ nav .link-group a:hover {
     background-color: transparent;
 }
 
+.search input::placeholder {
+    color: var(--secondary-text-color);
+}
+
 .search input:hover,
 .search input:focus {
     outline: none;
@@ -121,7 +125,7 @@ nav .link-group a:hover {
     justify-items: center;
     align-items: center;
     text-align: center;
-    transition: height 0.6s ease-in-out;
+    transition: visibility .6s ease-in-out;
 }
 
 .weather img {
@@ -153,8 +157,6 @@ nav .link-group a:hover {
     align-content: center;
     border-radius: 10px;
     background-color: var(--input-bg);
-    opacity: 0;
-    transition: opacity .6s ease-in-out .7s;
 }
 
 .detail i {
@@ -176,4 +178,14 @@ nav .link-group a:hover {
 
 .detail div p {
     text-align: center;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity .6s ease-in-out .7s;
+}
+
+.fade.show {
+    opacity: 1;
+    transition: opacity .6s ease-in-out .7s;
 }

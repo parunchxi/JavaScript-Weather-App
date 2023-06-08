@@ -11,7 +11,7 @@ async function fetchData(city) {
         const { lat, lon } = location[0];
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
         const weatherData = await weatherResponse.json();
-        showWeather(weatherData);
+        await showWeather(weatherData);
     } catch (error) {
         console.log(error);
     }
@@ -19,7 +19,7 @@ async function fetchData(city) {
 
 // City search and data
 const card = document.querySelector('.card');
-const detail = document.querySelectorAll('.detail');
+const fade = document.querySelectorAll('.fade');
 const searchCity = document.getElementById('city');
 const weatherBox = document.getElementById('weather_box');
 const city = localStorage.getItem('city');
@@ -36,7 +36,11 @@ function checkCity() {
 }
 
 function saveCity() {
-    localStorage.setItem('city', searchCity.value);
+    if (searchCity.value === '') {
+        localStorage.removeItem('city');
+    } else {
+        localStorage.setItem('city', searchCity.value);
+    }
 }
 
 searchCity.addEventListener('change', (() => {
@@ -58,21 +62,22 @@ function showWeather(weatherData) {
     weatherDescription.innerHTML = `${description.charAt(0).toUpperCase() + description.slice(1)}`;
     weatherHumidity.innerHTML = `${weatherData.main.humidity}%`;
     weatherAirPressure.innerHTML = `${weatherData.main.pressure}hPa`;
+    show();
 }
 
 // Show & hide
 function show() {
     card.style.height = '730px';
-    weatherBox.style.display = 'block';
-    detail.forEach(item => {
-        item.style.opacity = '1';
+    weatherBox.style.visibility = 'visible';
+    fade.forEach(item => {
+        item.classList.add('show');
     })
 }
 
 function hide() {
     card.style.height = '100px';
-    weatherBox.style.display = 'none';
-    detail.forEach(item => {
-        item.style.opacity = '0';
+    weatherBox.style.visibility = 'hidden';
+    fade.forEach(item => {
+        item.classList.remove('show');
     })
 }
