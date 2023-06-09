@@ -12,13 +12,18 @@ changeTheme.addEventListener('click', () => {
 function setDarkMode() {
     document.body.classList.add('dark-mode');
     changeTheme.innerHTML = '<i class="ri-moon-fill"></i>';
-    localStorage.setItem('theme', 'darkMode');
+    saveTeme('darkMode');
 }
 
 function setLightMode() {
     document.body.classList.remove('dark-mode');
     changeTheme.innerHTML = '<i class="ri-sun-fill"></i>';
-    localStorage.removeItem('theme');
+    saveTeme('lightMode');
+}
+
+// Save Theme
+function saveTeme(theme) {
+    localStorage.setItem('theme', theme);
 }
 
 // Get Theme
@@ -26,15 +31,13 @@ const theme = localStorage.getItem('theme');
 
 if (theme === 'darkMode') {
     setDarkMode();
-} else {
+} else if (theme === 'lightMode') {
     setLightMode();
-}
-
-// Detect Theme
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     setDarkMode();
 }
 
+// Detect Theme
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     if (event.matches) {
         setDarkMode();
