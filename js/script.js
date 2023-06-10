@@ -1,5 +1,5 @@
 // Get weather data
-const apiKey = '18e878f038df535000f044d97f7ec16c';
+const apiKey = 'YOUR_API_KEY';
 async function fetchData(city) {
     if (city === '') {
         hide();
