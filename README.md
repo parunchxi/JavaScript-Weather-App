@@ -10,7 +10,7 @@ This Weather App has been developed using HTML, CSS, and Vanilla JavaScript.
 
 Please insert your API key from [Open Weather](https://openweathermap.org/api) in "js > script.js > line 2."
 
-       apiKey = 'YOUR_API_KEY';
+       const apiKey = 'YOUR_API_KEY';
 
 ## Preview
 ![Weather App Preview](img/Preview.png)
